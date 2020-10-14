@@ -1,0 +1,16 @@
+{
+    "prologDialogue": [
+        "Once upon a time there was an astronaut who was on his way back to earth",
+        "The astronaut had just been working overtime the day before his return day",
+        "He is very sleepy",
+        "He didn't notice an asteroid heading his way",
+        "An accident happened",
+        "Luckily the astronaut managed to get out of his rocket safely accompanied by his gun",
+        "He is lost in space..."
+    ],
+    "epilogDialogue": [
+        "The astronaut has returned to earth safely",
+        "Thanks for helping"
+    ],
+    "currentLevel": "Level1"
+}
