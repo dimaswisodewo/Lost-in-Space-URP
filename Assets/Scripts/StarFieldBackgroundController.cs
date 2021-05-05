@@ -13,15 +13,15 @@ public class StarFieldBackgroundController : MonoBehaviour
         startPos = transform.position;
     }
 
-    private void Update()
-    {
-        //Vector2 temp = transform.position;
+    //private void Update()
+    //{
+    //    //Vector2 temp = transform.position;
 
-        float xPos = startPos.x + cam.transform.position.x * -1 * parallaxEffect;
-        float yPos = startPos.y + cam.transform.position.y * -1 * parallaxEffect;
+    //    float xPos = startPos.x + cam.transform.position.x * -1 * parallaxEffect;
+    //    float yPos = startPos.y + cam.transform.position.y * -1 * parallaxEffect;
 
-        //transform.position = Vector2.Lerp(temp, new Vector2(xPos, yPos), 1f);
-        transform.position = new Vector2(xPos, yPos);
-    }
+    //    //transform.position = Vector2.Lerp(temp, new Vector2(xPos, yPos), 1f);
+    //    transform.position = new Vector2(xPos, yPos);
+    //}
 
 }

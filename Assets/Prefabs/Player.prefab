@@ -124,6 +124,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -146,7 +147,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 51684951
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d84927c5891feba47966bd5f7e8ef2d0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -181,7 +182,6 @@ MonoBehaviour:
   gunPos: {fileID: 8314902990903679575}
   shootSpeed: 400
   blastSpeed: 10
-  renderer: {fileID: 8314902990227543395}
 --- !u!50 &8314902990227543421
 Rigidbody2D:
   serializedVersion: 4
@@ -199,9 +199,9 @@ Rigidbody2D:
   m_AngularDrag: 1.5
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: b0e5f01f907eea045b33e48df9ad799b, type: 2}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!70 &8314902990227543422
 CapsuleCollider2D:

@@ -9,20 +9,25 @@ public class Player : MonoBehaviour
     public VariableJoystick variableJoystick;
     public GameObject particle;
     public int health = 3;
-    public bool isAlive = true;
+
+    [HideInInspector] public bool isAlive = true;
+
     private bool isInvincible;
     private bool dragging;
     private int bulletCount;
-    [SerializeField] private float rotateSpeed = 90f;
+    private float maxAngularVelocity = 400f;
+    private SpriteRenderer playerRenderer;
+
+    [SerializeField] private float rotateSpeed = 100f;
     [SerializeField] private Transform gunPos;
     [SerializeField] private float shootSpeed = 400f;
     [SerializeField] private float blastSpeed = 10f;
-    [SerializeField] private SpriteRenderer renderer;
 
     private void Awake()
     {
         if (Instance == null) Instance = this;
         rb = GetComponent<Rigidbody2D>();
+        playerRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start()
@@ -39,7 +44,12 @@ public class Player : MonoBehaviour
     private void JoystickControl()
     {
         Vector3 direction = Vector3.forward * variableJoystick.Vertical + Vector3.right * variableJoystick.Horizontal;
-        rb.AddTorque(-direction.x * rotateSpeed * Time.fixedDeltaTime, ForceMode2D.Force);
+        float force = -direction.x * rotateSpeed * Time.fixedDeltaTime;
+
+        Debug.Log(direction);
+
+        rb.AddTorque(force, ForceMode2D.Force);
+        rb.angularVelocity = Mathf.Clamp(rb.angularVelocity, -maxAngularVelocity, maxAngularVelocity);
     }
 
     private void Shoot()
@@ -92,11 +102,11 @@ public class Player : MonoBehaviour
         switch (colorEnum)
         {
             case COLOR.RED:
-                renderer.color = new Color32(255, 102, 102, 255);
+                playerRenderer.color = new Color32(255, 102, 102, 255);
                 break;
 
             case COLOR.WHITE:
-                renderer.color = new Color32(255, 255, 255, 255);
+                playerRenderer.color = new Color32(255, 255, 255, 255);
                 break;
         }
     }

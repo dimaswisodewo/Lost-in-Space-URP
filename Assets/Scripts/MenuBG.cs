@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class MenuBG : MonoBehaviour
 {
-    public Renderer renderer;
+    public Renderer menuRenderer;
     private Material mat;
     private float offset;
 
     private void Awake()
     {
-        mat = renderer.materials[0];
+        mat = menuRenderer.materials[0];
     }
 
     private void Update()

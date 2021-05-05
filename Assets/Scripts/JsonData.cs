@@ -48,7 +48,7 @@ public class JsonData : MonoBehaviour
 
         yield return request.SendWebRequest();
 
-        if (request.isHttpError || request.isNetworkError)
+        if (request.result == UnityWebRequest.Result.ProtocolError || request.result == UnityWebRequest.Result.ConnectionError)
         {
             Debug.Log("Request Error: " + request.error);
         }
